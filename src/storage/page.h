@@ -11,7 +11,8 @@ See the Mulan PSL v2 for more details. */
 #pragma once
 
 #include "common/config.h"
-
+#include <cstring>
+#include <string>
 /**
  * @description: 存储层每个Page的id的声明
  */

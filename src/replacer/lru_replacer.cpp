@@ -9,6 +9,7 @@ MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 See the Mulan PSL v2 for more details. */
 
 #include "lru_replacer.h"
+#include <iterator>
 
 LRUReplacer::LRUReplacer(size_t num_pages) { max_size_ = num_pages; }
 
@@ -26,8 +27,14 @@ bool LRUReplacer::victim(frame_id_t* frame_id) {
 
     // Todo:
     //  利用lru_replacer中的LRUlist_,LRUHash_实现LRU策略
+    if(LRUlist_.empty()){
+        return false;
+    }
     //  选择合适的frame指定为淘汰页面,赋值给*frame_id
-
+    *frame_id=LRUlist_.back();
+    LRUlist_.pop_back();
+    LRUhash_.erase(*frame_id);
+    //list需用iterator删除，hash直接erase
     return true;
 }
 
@@ -39,7 +46,13 @@ void LRUReplacer::pin(frame_id_t frame_id) {
     std::scoped_lock lock{latch_};
     // Todo:
     // 固定指定id的frame
+    auto it=LRUhash_.find(frame_id);
+    if(it==LRUhash_.end()){
+        return;
+    }
     // 在数据结构中移除该frame
+    LRUlist_.erase(it->second);
+    LRUhash_.erase(it);
 }
 
 /**
@@ -47,9 +60,21 @@ void LRUReplacer::pin(frame_id_t frame_id) {
  * @param {frame_id_t} frame_id 取消固定的frame的id
  */
 void LRUReplacer::unpin(frame_id_t frame_id) {
+    std::scoped_lock lock{latch_};
     // Todo:
     //  支持并发锁
+    if(LRUhash_.count(frame_id)){
+        return;
+    }
+    if(LRUlist_.size()>=max_size_){
+        return;
+    }
+    //注意：list删除要看是否为空，list插入要看是否为满
     //  选择一个frame取消固定
+    LRUlist_.push_front(frame_id);
+    LRUhash_[frame_id]=LRUlist_.begin();
+    //std::list<frame_id_t>::iterator it=LRUlist_.begin();
+    //LRUhash_[frame_id]=it;
 }
 
 /**
