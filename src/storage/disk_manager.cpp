@@ -55,13 +55,12 @@ void DiskManager::read_page(int fd, page_id_t page_no, char *offset, int num_byt
     if(lseek(fd,page_offset,SEEK_SET)==-1){
         throw UnixError();
     }
+    // 2.调用read()函数
+    // 注意read返回值与num_bytes不等时，throw InternalError("DiskManager::read_page Error");
     ssize_t bytes_read=read(fd,offset,num_bytes);
     if(bytes_read!=num_bytes){
         throw InternalError("DiskManager::read_page Error");
     }
-    // 2.调用read()函数
-    // 注意read返回值与num_bytes不等时，throw InternalError("DiskManager::read_page Error");
-
 }
 
 /**
@@ -149,7 +148,7 @@ void DiskManager::destroy_file(const std::string &path) {
     }
     path2fd_.erase(path);
     // 注意不能删除未关闭的文件
-    
+    //显然只能path2fd删除path，因为fd=-1时，fd2path中没有对应的项
 }
 
 
