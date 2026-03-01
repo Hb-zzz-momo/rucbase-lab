@@ -60,6 +60,7 @@ class RmFileHandle {
         disk_manager_->read_page(fd, RM_FILE_HDR_PAGE, (char *)&file_hdr_, sizeof(file_hdr_));
         // disk_manager管理的fd对应的文件中，设置从file_hdr_.num_pages开始分配page_no
         disk_manager_->set_fd2pageno(fd, file_hdr_.num_pages);
+        //为allocate_page分配page_no时，disk_manager会调用fd2pageno_来获得当前文件的page_no分配位置
     }
 
     RmFileHdr get_file_hdr() { return file_hdr_; }
@@ -68,6 +69,7 @@ class RmFileHandle {
     /* 判断指定位置上是否已经存在一条记录，通过Bitmap来判断 */
     bool is_record(const Rid &rid) const {
         RmPageHandle page_handle = fetch_page_handle(rid.page_no);
+        buffer_pool_manager_->unpin_page({fd_, rid.page_no}, false);
         return Bitmap::is_set(page_handle.bitmap, rid.slot_no);  // page的slot_no位置上是否有record
     }
 

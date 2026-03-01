@@ -40,6 +40,7 @@ bool BufferPoolManager::find_victim_page(frame_id_t* frame_id) {
  * @param {PageId} new_page_id 新的page_id
  * @param {frame_id_t} new_frame_id 新的帧frame_id
  */
+//只有在fetch或者write的时候才会重置dirty
 void BufferPoolManager::update_page(Page *page, PageId new_page_id, frame_id_t new_frame_id) {
     // Todo:
     // 1 如果是脏页，写回磁盘，并且把dirty置为false//无有效页
@@ -215,6 +216,7 @@ bool BufferPoolManager::delete_page(PageId page_id) {
     page->reset_memory();
     free_list_.emplace_back(fid);
     replacer_->pin(fid);
+    //把pin当成从LRU中删除了
     return true;
 }
 
@@ -232,3 +234,4 @@ void BufferPoolManager::flush_all_pages(int fd) {
         }
     }
 }
+//for(:)是用begin(),end()遍历容器

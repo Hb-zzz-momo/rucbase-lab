@@ -7,7 +7,7 @@ THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
 EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
 MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 See the Mulan PSL v2 for more details. */
-
+//只负责给出frame_id_t的LRU替换策略实现，BufferPoolManager调用LRUReplacer中的方法来实现LRU替换策略
 #include "lru_replacer.h"
 #include <iterator>
 
@@ -54,6 +54,7 @@ void LRUReplacer::pin(frame_id_t frame_id) {
     LRUlist_.erase(it->second);
     LRUhash_.erase(it);
 }
+//it看有没有，有的话说明非空，然后除去
 
 /**
  * @description: 取消固定一个frame，代表该页面可以被淘汰
@@ -76,6 +77,7 @@ void LRUReplacer::unpin(frame_id_t frame_id) {
     //std::list<frame_id_t>::iterator it=LRUlist_.begin();
     //LRUhash_[frame_id]=it;
 }
+//count看有没有，没有的话加入，但是满了是不能加入的   
 
 /**
  * @description: 获取当前replacer中可以被淘汰的页面数量
