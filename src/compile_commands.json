@@ -1,0 +1,260 @@
+[
+{
+  "directory": "/home/zbh/24211870236/src/src",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/rmdb.dir/rmdb.cpp.o -c /home/zbh/24211870236/src/rmdb.cpp",
+  "file": "/home/zbh/24211870236/src/rmdb.cpp",
+  "output": "src/CMakeFiles/rmdb.dir/rmdb.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/analyze",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/analyze.dir/analyze.cpp.o -c /home/zbh/24211870236/src/analyze/analyze.cpp",
+  "file": "/home/zbh/24211870236/src/analyze/analyze.cpp",
+  "output": "src/analyze/CMakeFiles/analyze.dir/analyze.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/record",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/record.dir/rm_file_handle.cpp.o -c /home/zbh/24211870236/src/record/rm_file_handle.cpp",
+  "file": "/home/zbh/24211870236/src/record/rm_file_handle.cpp",
+  "output": "src/record/CMakeFiles/record.dir/rm_file_handle.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/record",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/record.dir/rm_scan.cpp.o -c /home/zbh/24211870236/src/record/rm_scan.cpp",
+  "file": "/home/zbh/24211870236/src/record/rm_scan.cpp",
+  "output": "src/record/CMakeFiles/record.dir/rm_scan.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/record",
+  "command": "/usr/bin/c++ -Drecords_EXPORTS -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -fPIC -o CMakeFiles/records.dir/rm_file_handle.cpp.o -c /home/zbh/24211870236/src/record/rm_file_handle.cpp",
+  "file": "/home/zbh/24211870236/src/record/rm_file_handle.cpp",
+  "output": "src/record/CMakeFiles/records.dir/rm_file_handle.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/record",
+  "command": "/usr/bin/c++ -Drecords_EXPORTS -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -fPIC -o CMakeFiles/records.dir/rm_scan.cpp.o -c /home/zbh/24211870236/src/record/rm_scan.cpp",
+  "file": "/home/zbh/24211870236/src/record/rm_scan.cpp",
+  "output": "src/record/CMakeFiles/records.dir/rm_scan.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/index",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/index.dir/ix_index_handle.cpp.o -c /home/zbh/24211870236/src/index/ix_index_handle.cpp",
+  "file": "/home/zbh/24211870236/src/index/ix_index_handle.cpp",
+  "output": "src/index/CMakeFiles/index.dir/ix_index_handle.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/index",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/index.dir/ix_scan.cpp.o -c /home/zbh/24211870236/src/index/ix_scan.cpp",
+  "file": "/home/zbh/24211870236/src/index/ix_scan.cpp",
+  "output": "src/index/CMakeFiles/index.dir/ix_scan.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/system",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/system.dir/sm_manager.cpp.o -c /home/zbh/24211870236/src/system/sm_manager.cpp",
+  "file": "/home/zbh/24211870236/src/system/sm_manager.cpp",
+  "output": "src/system/CMakeFiles/system.dir/sm_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/execution",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/execution.dir/execution_manager.cpp.o -c /home/zbh/24211870236/src/execution/execution_manager.cpp",
+  "file": "/home/zbh/24211870236/src/execution/execution_manager.cpp",
+  "output": "src/execution/CMakeFiles/execution.dir/execution_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/parser",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/parser.dir/yacc.tab.cpp.o -c /home/zbh/24211870236/src/parser/yacc.tab.cpp",
+  "file": "/home/zbh/24211870236/src/parser/yacc.tab.cpp",
+  "output": "src/parser/CMakeFiles/parser.dir/yacc.tab.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/parser",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/parser.dir/lex.yy.cpp.o -c /home/zbh/24211870236/src/parser/lex.yy.cpp",
+  "file": "/home/zbh/24211870236/src/parser/lex.yy.cpp",
+  "output": "src/parser/CMakeFiles/parser.dir/lex.yy.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/parser",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/parser.dir/ast.cpp.o -c /home/zbh/24211870236/src/parser/ast.cpp",
+  "file": "/home/zbh/24211870236/src/parser/ast.cpp",
+  "output": "src/parser/CMakeFiles/parser.dir/ast.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/parser",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/test_parser.dir/test_parser.cpp.o -c /home/zbh/24211870236/src/parser/test_parser.cpp",
+  "file": "/home/zbh/24211870236/src/parser/test_parser.cpp",
+  "output": "src/parser/CMakeFiles/test_parser.dir/test_parser.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/optimizer",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/planner.dir/planner.cpp.o -c /home/zbh/24211870236/src/optimizer/planner.cpp",
+  "file": "/home/zbh/24211870236/src/optimizer/planner.cpp",
+  "output": "src/optimizer/CMakeFiles/planner.dir/planner.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/storage",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/storage.dir/disk_manager.cpp.o -c /home/zbh/24211870236/src/storage/disk_manager.cpp",
+  "file": "/home/zbh/24211870236/src/storage/disk_manager.cpp",
+  "output": "src/storage/CMakeFiles/storage.dir/disk_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/storage",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/storage.dir/buffer_pool_manager.cpp.o -c /home/zbh/24211870236/src/storage/buffer_pool_manager.cpp",
+  "file": "/home/zbh/24211870236/src/storage/buffer_pool_manager.cpp",
+  "output": "src/storage/CMakeFiles/storage.dir/buffer_pool_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/storage",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/storage.dir/__/replacer/lru_replacer.cpp.o -c /home/zbh/24211870236/src/replacer/lru_replacer.cpp",
+  "file": "/home/zbh/24211870236/src/replacer/lru_replacer.cpp",
+  "output": "src/storage/CMakeFiles/storage.dir/__/replacer/lru_replacer.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/replacer",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/lru_replacer.dir/lru_replacer.cpp.o -c /home/zbh/24211870236/src/replacer/lru_replacer.cpp",
+  "file": "/home/zbh/24211870236/src/replacer/lru_replacer.cpp",
+  "output": "src/replacer/CMakeFiles/lru_replacer.dir/lru_replacer.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/transaction",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/transaction.dir/concurrency/lock_manager.cpp.o -c /home/zbh/24211870236/src/transaction/concurrency/lock_manager.cpp",
+  "file": "/home/zbh/24211870236/src/transaction/concurrency/lock_manager.cpp",
+  "output": "src/transaction/CMakeFiles/transaction.dir/concurrency/lock_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/transaction",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/transaction.dir/transaction_manager.cpp.o -c /home/zbh/24211870236/src/transaction/transaction_manager.cpp",
+  "file": "/home/zbh/24211870236/src/transaction/transaction_manager.cpp",
+  "output": "src/transaction/CMakeFiles/transaction.dir/transaction_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/recovery",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/recovery.dir/log_manager.cpp.o -c /home/zbh/24211870236/src/recovery/log_manager.cpp",
+  "file": "/home/zbh/24211870236/src/recovery/log_manager.cpp",
+  "output": "src/recovery/CMakeFiles/recovery.dir/log_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/recovery",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/recovery.dir/log_recovery.cpp.o -c /home/zbh/24211870236/src/recovery/log_recovery.cpp",
+  "file": "/home/zbh/24211870236/src/recovery/log_recovery.cpp",
+  "output": "src/recovery/CMakeFiles/recovery.dir/log_recovery.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/recovery",
+  "command": "/usr/bin/c++ -Drecoverys_EXPORTS -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -fPIC -o CMakeFiles/recoverys.dir/log_manager.cpp.o -c /home/zbh/24211870236/src/recovery/log_manager.cpp",
+  "file": "/home/zbh/24211870236/src/recovery/log_manager.cpp",
+  "output": "src/recovery/CMakeFiles/recoverys.dir/log_manager.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/recovery",
+  "command": "/usr/bin/c++ -Drecoverys_EXPORTS -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -fPIC -o CMakeFiles/recoverys.dir/log_recovery.cpp.o -c /home/zbh/24211870236/src/recovery/log_recovery.cpp",
+  "file": "/home/zbh/24211870236/src/recovery/log_recovery.cpp",
+  "output": "src/recovery/CMakeFiles/recoverys.dir/log_recovery.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o -c /home/zbh/24211870236/src/test/storage/disk_manager_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/storage/disk_manager_test.cpp",
+  "output": "src/test/CMakeFiles/disk_manager_test.dir/storage/disk_manager_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/lru_replacer_test.dir/storage/lru_replacer_test.cpp.o -c /home/zbh/24211870236/src/test/storage/lru_replacer_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/storage/lru_replacer_test.cpp",
+  "output": "src/test/CMakeFiles/lru_replacer_test.dir/storage/lru_replacer_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/buffer_pool_manager_test.dir/storage/buffer_pool_manager_test.cpp.o -c /home/zbh/24211870236/src/test/storage/buffer_pool_manager_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/storage/buffer_pool_manager_test.cpp",
+  "output": "src/test/CMakeFiles/buffer_pool_manager_test.dir/storage/buffer_pool_manager_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/record_manager_test.dir/storage/record_manager_test.cpp.o -c /home/zbh/24211870236/src/test/storage/record_manager_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/storage/record_manager_test.cpp",
+  "output": "src/test/CMakeFiles/record_manager_test.dir/storage/record_manager_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/b_plus_tree_insert_test.dir/index/b_plus_tree_insert_test.cpp.o -c /home/zbh/24211870236/src/test/index/b_plus_tree_insert_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/index/b_plus_tree_insert_test.cpp",
+  "output": "src/test/CMakeFiles/b_plus_tree_insert_test.dir/index/b_plus_tree_insert_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/b_plus_tree_delete_test.dir/index/b_plus_tree_delete_test.cpp.o -c /home/zbh/24211870236/src/test/index/b_plus_tree_delete_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/index/b_plus_tree_delete_test.cpp",
+  "output": "src/test/CMakeFiles/b_plus_tree_delete_test.dir/index/b_plus_tree_delete_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/b_plus_tree_concurrent_test.dir/index/b_plus_tree_concurrent_test.cpp.o -c /home/zbh/24211870236/src/test/index/b_plus_tree_concurrent_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/index/b_plus_tree_concurrent_test.cpp",
+  "output": "src/test/CMakeFiles/b_plus_tree_concurrent_test.dir/index/b_plus_tree_concurrent_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/query_test.dir/query/query_test.cpp.o -c /home/zbh/24211870236/src/test/query/query_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/query/query_test.cpp",
+  "output": "src/test/CMakeFiles/query_test.dir/query/query_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/transaction_test.dir/transaction/transaction_test.cpp.o -c /home/zbh/24211870236/src/test/transaction/transaction_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/transaction/transaction_test.cpp",
+  "output": "src/test/CMakeFiles/transaction_test.dir/transaction/transaction_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/regress_test.dir/regress/regress_test_main.cpp.o -c /home/zbh/24211870236/src/test/regress/regress_test_main.cpp",
+  "file": "/home/zbh/24211870236/src/test/regress/regress_test_main.cpp",
+  "output": "src/test/CMakeFiles/regress_test.dir/regress/regress_test_main.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/regress_test.dir/regress/regress_test.cpp.o -c /home/zbh/24211870236/src/test/regress/regress_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/regress/regress_test.cpp",
+  "output": "src/test/CMakeFiles/regress_test.dir/regress/regress_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/concurrency_test.dir/concurrency/concurrency_test_main.cpp.o -c /home/zbh/24211870236/src/test/concurrency/concurrency_test_main.cpp",
+  "file": "/home/zbh/24211870236/src/test/concurrency/concurrency_test_main.cpp",
+  "output": "src/test/CMakeFiles/concurrency_test.dir/concurrency/concurrency_test_main.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/concurrency_test.dir/concurrency/concurrency_test.cpp.o -c /home/zbh/24211870236/src/test/concurrency/concurrency_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/concurrency/concurrency_test.cpp",
+  "output": "src/test/CMakeFiles/concurrency_test.dir/concurrency/concurrency_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/src/test",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/src -Wall -O0 -g -ggdb3 -std=gnu++17 -o CMakeFiles/concurrency_test.dir/regress/regress_test.cpp.o -c /home/zbh/24211870236/src/test/regress/regress_test.cpp",
+  "file": "/home/zbh/24211870236/src/test/regress/regress_test.cpp",
+  "output": "src/test/CMakeFiles/concurrency_test.dir/regress/regress_test.cpp.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/deps/googletest/googlemock",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/deps/googletest/googlemock/include -I/home/zbh/24211870236/deps/googletest/googlemock -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/zbh/24211870236/deps/googletest/googlemock/src/gmock-all.cc",
+  "file": "/home/zbh/24211870236/deps/googletest/googlemock/src/gmock-all.cc",
+  "output": "deps/googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/deps/googletest/googlemock",
+  "command": "/usr/bin/c++  -isystem /home/zbh/24211870236/deps/googletest/googlemock/include -isystem /home/zbh/24211870236/deps/googletest/googlemock -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/zbh/24211870236/deps/googletest/googlemock/src/gmock_main.cc",
+  "file": "/home/zbh/24211870236/deps/googletest/googlemock/src/gmock_main.cc",
+  "output": "deps/googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/deps/googletest/googletest",
+  "command": "/usr/bin/c++  -I/home/zbh/24211870236/deps/googletest/googletest/include -I/home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/zbh/24211870236/deps/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/zbh/24211870236/deps/googletest/googletest/src/gtest-all.cc",
+  "output": "deps/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/zbh/24211870236/src/deps/googletest/googletest",
+  "command": "/usr/bin/c++  -isystem /home/zbh/24211870236/deps/googletest/googletest/include -isystem /home/zbh/24211870236/deps/googletest/googletest -Wall -O0 -g -ggdb3 -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/zbh/24211870236/deps/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/zbh/24211870236/deps/googletest/googletest/src/gtest_main.cc",
+  "output": "deps/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

@@ -25,6 +25,7 @@ struct ColDef {
 };
 
 /* 系统管理器，负责元数据管理和DDL语句的执行 */
+//相当于SmManager存储正在操作的数据库的元数据，提供接口供上层调用来执行DDL语句
 class SmManager {
    public:
     DbMeta db_;             // 当前打开的数据库的元数据
