@@ -53,4 +53,60 @@ class AbstractExecutor {
         }
         return pos;
     }
+
+    int compare_value(const char *lhs, const char *rhs, ColType type, int len) const {
+        switch (type) {
+            case TYPE_INT: {
+                int l = *reinterpret_cast<const int *>(lhs);
+                int r = *reinterpret_cast<const int *>(rhs);
+                return (l < r) ? -1 : (l > r);
+            }
+            case TYPE_FLOAT: {
+                float l = *reinterpret_cast<const float *>(lhs);
+                float r = *reinterpret_cast<const float *>(rhs);
+                return (l < r) ? -1 : (l > r);
+            }
+            case TYPE_STRING:
+                return memcmp(lhs, rhs, len);
+            default:
+                throw InternalError("Unexpected column type");
+        }
+    }
+
+    bool compare_result(int cmp, CompOp op) const {
+        switch (op) {
+            case OP_EQ:
+                return cmp == 0;
+            case OP_NE:
+                return cmp != 0;
+            case OP_LT:
+                return cmp < 0;
+            case OP_GT:
+                return cmp > 0;
+            case OP_LE:
+                return cmp <= 0;
+            case OP_GE:
+                return cmp >= 0;
+            default:
+                throw InternalError("Unexpected comparison operator");
+        }
+    }
+
+    bool eval_conds(const std::vector<Condition> &conds, const std::vector<ColMeta> &rec_cols, const char *rec_data) {
+        for (const auto &cond : conds) {
+            auto lhs_col = get_col(rec_cols, cond.lhs_col);
+            const char *lhs = rec_data + lhs_col->offset;
+            const char *rhs = nullptr;
+            if (cond.is_rhs_val) {
+                rhs = cond.rhs_val.raw->data;
+            } else {
+                auto rhs_col = get_col(rec_cols, cond.rhs_col);
+                rhs = rec_data + rhs_col->offset;
+            }
+            if (!compare_result(compare_value(lhs, rhs, lhs_col->type, lhs_col->len), cond.op)) {
+                return false;
+            }
+        }
+        return true;
+    }
 };

@@ -63,6 +63,7 @@ class IxNodeHandle {
 
     IxNodeHandle(const IxFileHdr *file_hdr_, Page *page_) : file_hdr(file_hdr_), page(page_) {
         page_hdr = reinterpret_cast<IxPageHdr *>(page->get_data());
+        //类型转换了才可以进行成员访问
         keys = page->get_data() + sizeof(IxPageHdr);
         rids = reinterpret_cast<Rid *>(keys + file_hdr->keys_size_);
     }
@@ -74,12 +75,13 @@ class IxNodeHandle {
     int get_max_size() { return file_hdr->btree_order_ + 1; }
 
     int get_min_size() { return get_max_size() / 2; }
+    //！重点
 
     int key_at(int i) { return *(int *)get_key(i); }
 
     /* 得到第i个孩子结点的page_no */
     page_id_t value_at(int i) { return get_rid(i)->page_no; }
-
+   
     page_id_t get_page_no() { return page->get_page_id().page_no; }
 
     PageId get_page_id() { return page->get_page_id(); }

@@ -38,7 +38,34 @@ class UpdateExecutor : public AbstractExecutor {
         context_ = context;
     }
     std::unique_ptr<RmRecord> Next() override {
-        
+        for (const auto &rid : rids_) {
+            auto old_rec = fh_->get_record(rid, context_);
+            RmRecord new_rec(fh_->get_file_hdr().record_size);
+            memcpy(new_rec.data, old_rec->data, new_rec.size);
+
+            for (auto &set_clause : set_clauses_) {
+                auto col = tab_.get_col(set_clause.lhs.col_name);
+                memcpy(new_rec.data + col->offset, set_clause.rhs.raw->data, col->len);
+            }
+
+            for (auto &index : tab_.indexes) {
+                auto ih = sm_manager_->ihs_.at(sm_manager_->get_ix_manager()->get_index_name(tab_name_, index.cols)).get();
+                char *old_key = new char[index.col_tot_len];
+                char *new_key = new char[index.col_tot_len];
+                int offset = 0;
+                for (auto &col : index.cols) {
+                    memcpy(old_key + offset, old_rec->data + col.offset, col.len);
+                    memcpy(new_key + offset, new_rec.data + col.offset, col.len);
+                    offset += col.len;
+                }
+                ih->delete_entry(old_key, context_->txn_);
+                ih->insert_entry(new_key, rid, context_->txn_);
+                delete[] old_key;
+                delete[] new_key;
+            }
+
+            fh_->update_record(rid, new_rec.data, context_);
+        }
         return nullptr;
     }
 

@@ -9,6 +9,8 @@ MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 See the Mulan PSL v2 for more details. */
 
 #pragma once
+#include <algorithm>
+
 #include "execution_defs.h"
 #include "execution_manager.h"
 #include "executor_abstract.h"
@@ -23,6 +25,8 @@ class SortExecutor : public AbstractExecutor {
     bool is_desc_;
     std::vector<size_t> used_tuple;
     std::unique_ptr<RmRecord> current_tuple;
+    std::vector<std::unique_ptr<RmRecord>> tuples_;
+    size_t cursor_;
 
    public:
     SortExecutor(std::unique_ptr<AbstractExecutor> prev, TabCol sel_cols, bool is_desc) {
@@ -31,19 +35,35 @@ class SortExecutor : public AbstractExecutor {
         is_desc_ = is_desc;
         tuple_num = 0;
         used_tuple.clear();
+        cursor_ = 0;
     }
 
     void beginTuple() override { 
-        
+        tuples_.clear();
+        cursor_ = 0;
+        for (prev_->beginTuple(); !prev_->is_end(); prev_->nextTuple()) {
+            tuples_.push_back(prev_->Next());
+        }
+        std::sort(tuples_.begin(), tuples_.end(), [&](const auto &a, const auto &b) {
+            int cmp = compare_value(a->data + cols_.offset, b->data + cols_.offset, cols_.type, cols_.len);
+            return is_desc_ ? cmp > 0 : cmp < 0;
+        });
+        tuple_num = tuples_.size();
     }
 
     void nextTuple() override {
-        
+        if (cursor_ < tuples_.size()) {
+            cursor_++;
+        }
     }
 
     std::unique_ptr<RmRecord> Next() override {
-        return nullptr;
+        return std::make_unique<RmRecord>(*tuples_[cursor_]);
     }
 
+    size_t tupleLen() const override { return prev_->tupleLen(); }
+    const std::vector<ColMeta> &cols() const override { return prev_->cols(); }
+    bool is_end() const override { return cursor_ >= tuples_.size(); }
+    ColMeta get_col_offset(const TabCol &target) override { return *get_col(prev_->cols(), target); }
     Rid &rid() override { return _abstract_rid; }
 };

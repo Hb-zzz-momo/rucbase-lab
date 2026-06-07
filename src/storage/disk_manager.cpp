@@ -163,8 +163,7 @@ int DiskManager::open_file(const std::string &path) {
         throw FileNotFoundError(path);
     }
     if(path2fd_.count(path)){
-        //throw FileNotOpenError(path);×：FileNotOpenError是文件未打开错误，而这里是文件已经打开了
-        throw FileExistsError("File is already open: " + path);
+        return path2fd_.at(path);
     }
     // 调用open()函数，使用O_RDWR模式
     int fd=open(path.c_str(),O_RDWR,0600);

@@ -31,6 +31,8 @@ class IndexScanExecutor : public AbstractExecutor {
 
     Rid rid_;
     std::unique_ptr<RecScan> scan_;
+    Iid lower_;
+    Iid upper_;
 
     SmManager *sm_manager_;
 
@@ -65,16 +67,56 @@ class IndexScanExecutor : public AbstractExecutor {
     }
 
     void beginTuple() override {
-        
+        auto ih = sm_manager_->ihs_.at(sm_manager_->get_ix_manager()->get_index_name(tab_name_, index_meta_.cols)).get();
+        std::vector<char> key(index_meta_.col_tot_len);
+        bool has_eq_prefix = true;
+        int key_offset = 0;
+        for (const auto &idx_col : index_meta_.cols) {
+            auto cond = std::find_if(conds_.begin(), conds_.end(), [&](const Condition &c) {
+                return c.is_rhs_val && c.op == OP_EQ && c.lhs_col.tab_name == tab_name_ && c.lhs_col.col_name == idx_col.name;
+            });
+            if (cond == conds_.end()) {
+                has_eq_prefix = false;
+                break;
+            }
+            memcpy(key.data() + key_offset, cond->rhs_val.raw->data, idx_col.len);
+            key_offset += idx_col.len;
+        }
+        lower_ = has_eq_prefix ? ih->lower_bound(key.data()) : ih->leaf_begin();
+        upper_ = has_eq_prefix ? ih->upper_bound(key.data()) : ih->leaf_end();
+        scan_ = std::make_unique<IxScan>(ih, lower_, upper_, sm_manager_->get_bpm());
+        while (!scan_->is_end()) {
+            auto rec = fh_->get_record(scan_->rid(), context_);
+            if (eval_conds(fed_conds_, cols_, rec->data)) {
+                rid_ = scan_->rid();
+                return;
+            }
+            scan_->next();
+        }
     }
 
     void nextTuple() override {
-        
+        if (scan_ == nullptr || scan_->is_end()) {
+            return;
+        }
+        scan_->next();
+        while (!scan_->is_end()) {
+            auto rec = fh_->get_record(scan_->rid(), context_);
+            if (eval_conds(fed_conds_, cols_, rec->data)) {
+                rid_ = scan_->rid();
+                return;
+            }
+            scan_->next();
+        }
     }
 
     std::unique_ptr<RmRecord> Next() override {
-        return nullptr;
+        return fh_->get_record(rid_, context_);
     }
 
+    size_t tupleLen() const override { return len_; }
+    const std::vector<ColMeta> &cols() const override { return cols_; }
+    bool is_end() const override { return scan_ == nullptr || scan_->is_end(); }
+    ColMeta get_col_offset(const TabCol &target) override { return *get_col(cols_, target); }
     Rid &rid() override { return rid_; }
 };
